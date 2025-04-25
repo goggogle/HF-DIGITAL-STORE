@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HF Digital Store</title>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #4db6ac, #1e3c72);
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+      position: relative;
+    }
+
+    .logo-container {
+      margin-top: 40px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo .circle {
+      background-color: #002147;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 0 auto;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 10px;
+      right: -160px;
+      width: 36px;
+      height: 36px;
+      background-color: #333;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      transition: background-color 0.3s ease;
+    }
+
+    .menu-icon:hover {
+      background-color: #555;
+    }
+
+    h1 {
+      margin-top: 15px;
+      font-size: 26px;
+    }
+
+    .button {
+      position: relative;
+      margin: 18px auto;
+      padding: 16px 25px;
+      width: 90%;
+      max-width: 450px;
+      border: 1px solid white;
+      border-radius: 25px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 17px;
+      background-color: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .button.primary {
+      background-color: transparent;
+    }
+
+    .button:hover {
+      background-color: white;
+      color: #1e3c72;
+      transform: scale(1.03);
+    }
+
+    .button .icon-wrapper {
+      position: absolute;
+      left: 20px;
+      background-color: white;
+      border-radius: 50%;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .button .icon-wrapper img {
+      width: 28px;
+      height: 28px;
+      transition: none;
+    }
+
+    .button:hover .icon-wrapper {
+      background-color: #1e3c72;
+    }
+
+    .button:hover .icon-wrapper img {
+      filter: none;
+    }
+
+    .socials {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .socials a img {
+      width: 38px;
+      height: 38px;
+      transition: transform 0.3s ease;
+      filter: brightness(0) invert(1);
+    }
+
+    .socials a:hover img {
+      transform: scale(1.2);
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+
+    .popup {
+    background: transparent;
+    color: white;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: top 0.2s;
+    max-height: 90vh;         /* Membatasi tinggi popup */
+    overflow-y: auto;         /* Biar bisa di-scroll */
+    padding: 20px;            /* Biar isi gak mentok */
+    }
+
+    .popup h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .popup p {
+      font-size: 18px;
+    }
+
+    .popup button {
+      margin-top: 40px;
+      padding: 12px 30px;
+      font-size: 18px;
+      background: #4db6ac;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .popup button:hover {
+      background: #1e3c72;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo-container">
+    <div class="logo">
+      <div class="circle">
+        <span>HF</span>
+      </div>
+    </div>
+    <div class="menu-icon" id="menuIcon">&#8943;</div>
+  </div>
+
+  <h1>HF Digital Store</h1>
+
+  <a href="#" class="button primary">BELI LISENSI WINDOWS DAN OFFICE DISINI MURAHH !!!</a>
+  <a href="#" class="button"><div class="icon-wrapper"><img src="images/telegram-logo-8.png" alt="Telegram" /></div>Telegram Channel</a>
+  <a href="#" class="button"><div class="icon-wrapper"><img src="images/shopee-logo-0.png" alt="Shopee" /></div>Shopee</a>
+  <a href="#" class="button"><div class="icon-wrapper"><img src="images/tokopedia-logo-5340B636F6-seeklogo.com_-1.webp" alt="Tokopedia" /></div>Tokopedia</a>
+
+  <div class="socials">
+    <a href="#"><img src="https://img.icons8.com/ios/50/ffffff/instagram-new--v1.png" alt="Instagram"></a>
+    <a href="#"><img src="https://img.icons8.com/ios/50/ffffff/youtube-play--v1.png" alt="YouTube"></a>
+    <a href="#"><img src="https://img.icons8.com/ios/50/ffffff/tiktok--v1.png" alt="TikTok"></a>
+  </div>
+</div>
+
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup" id="popupBox">
+    <h2>Selamat Datang di HF Digital Store</h2>
+    <p>BISA KAMU ISI DESCRIPTION KAMU SEBAGAI CONTOH SAYA ISI SYARAT DAN KETENTUAN</p>
+
+
+    <p>Selamat datang di <a href="https://mainzstore.biz.id" style="color: #00aeff;">MAINZ STORE</a>!</p>
+
+<p>Dengan mengakses situs web ini, Anda dianggap telah membaca, memahami, dan menyetujui seluruh syarat dan ketentuan yang berlaku. Jika Anda tidak menyetujui salah satu bagian dari ketentuan ini, mohon untuk tidak melanjutkan penggunaan situs.</p>
+
+<h3>Cookies</h3>
+<p>MAINZ STORE menggunakan cookies untuk meningkatkan pengalaman pengguna. Dengan mengakses situs ini, Anda setuju dengan penggunaan cookies sesuai dengan Kebijakan Privasi kami.</p>
+<p>Cookies membantu kami menyimpan informasi kunjungan pengguna, serta mendukung fitur tertentu di website. Beberapa mitra iklan atau afiliasi kami juga mungkin menggunakan cookies mereka sendiri.</p>
+
+<h3>Lisensi</h3>
+<p>Kecuali dinyatakan lain, semua konten dan hak kekayaan intelektual di MAINZ STORE dimiliki oleh MAINZ STORE dan/atau pemberi lisensinya. Seluruh hak cipta dilindungi undang-undang.</p>
+<p>Anda diperbolehkan mengakses konten di MAINZ STORE hanya untuk penggunaan pribadi, dengan batasan berikut:</p>
+
+<ul>
+  <li>Tidak boleh menerbitkan ulang konten dari MAINZ STORE.</li>
+  <li>Tidak boleh menjual, menyewakan, atau memberikan lisensi ulang terhadap konten dari MAINZ STORE.</li>
+  <li>Tidak boleh menggandakan atau menyalin konten untuk tujuan komersial.</li>
+  <li>Tidak boleh menyebarkan ulang konten dari MAINZ STORE tanpa izin.</li>
+</ul>
+
+<p>Perjanjian ini mulai berlaku sejak Anda pertama kali mengakses situs kami.</p>
+
+
+
+    <button onclick="closePopup()">Tutup</button>
+  </div>
+</div>
+
+<script>
+  const popupOverlay = document.getElementById('popupOverlay');
+  const popupBox = document.getElementById('popupBox');
+  let isDragging = false;
+  let startY;
+  let startTop;
+
+  document.getElementById('menuIcon').addEventListener('click', () => {
+    popupOverlay.style.display = 'flex';
+    popupBox.style.top = '50%';
+  });
+
+  function closePopup() {
+    popupOverlay.style.display = 'none';
+  }
+
+  popupBox.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startY = e.clientY;
+    startTop = parseInt(window.getComputedStyle(popupBox).top, 10);
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const dy = e.clientY - startY;
+    popupBox.style.top = `${startTop + dy}px`;
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+</script>
+
+</body>
+</html>
